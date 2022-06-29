@@ -1,6 +1,6 @@
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
-import bg2 from "../styles/img/b11.jpg";
+import bg2 from "../styles/img/3333.webp";
 import HeadBox from "../components/ui/HeadBox";
 import SignalStatus from "../components/dynamic/serverConnection/SignalStatus";
 import TickerPrice from "../components/dynamic/dataAPI/TickerPrice";
@@ -11,10 +11,10 @@ import OrderHubPanel from "../components/dynamic/orderHub/OrderHubPanel";
 export default function Home() {
   return (
     <div className="">
-      <div className="text-yellow-400/60 text-5xl nav-top z-30 absolute">
+      <div className="text-yellow-400 text-5xl nav-top z-30 absolute">
         FUN_TRADING_LAD
       </div>
-      <div className="absolute z-20 grid grid-cols-8 grid-rows-3 gap-1 w-full h-full mt-[50px] pb-[80px] ">
+      <div className="text-yellow-400 absolute z-20 grid grid-cols-8 grid-rows-3 gap-1 w-full h-full mt-[50px] pb-[80px] ">
         <div className=" row-span-3 col-span-1">
           <div className="grid grid-cols-1 grid-rows-3 w-full h-full gap-1">
             <div className=" row-span-1">
@@ -43,7 +43,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="bg-white/10 row-span-3 col-span-5 grid grid-cols-5 grid-rows-3 gap-1">
+        <div className=" row-span-3 col-span-5 grid grid-cols-5 grid-rows-3 gap-1">
           <div className="  row-span-2 col-span-3">
             <HeadBox>SERVER_STATUS_tonhat</HeadBox>
           </div>
