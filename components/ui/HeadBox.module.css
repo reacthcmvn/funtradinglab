@@ -14,37 +14,3 @@
       ;
   );
 }
-.boxe {
-  background-image: linear-gradient(
-      0deg,
-      #333,
-      #333 0%,
-      transparent 0%,
-      transparent 0%,
-      #333 0%
-    ),
-    linear-gradient(
-      90deg,
-      #333,
-      #333 0%,
-      transparent 0%,
-      transparent 0%,
-      #333 0%
-    ),
-    linear-gradient(
-      180deg,
-      #333,
-      #333 0%,
-      transparent 0%,
-      transparent 0%,
-      #333 0%
-    ),
-    linear-gradient(
-      270deg,
-      #333,
-      #333 2%,
-      transparent 2%,
-      transparent 98%,
-      #333 98%
-    );
-}
