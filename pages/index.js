@@ -6,6 +6,7 @@ import SignalStatus from "../components/dynamic/serverConnection/SignalStatus";
 import TickerPrice from "../components/dynamic/dataAPI/TickerPrice";
 import Location from "../components/ui/Location";
 import DataStream from "../components/dynamic/dataAPI/DataStream";
+import OrderHubPanel from "../components/dynamic/orderHub/OrderHubPanel";
 
 export default function Home() {
   return (
@@ -58,6 +59,7 @@ export default function Home() {
           </div>
           <div className="  row-span-1 col-span-1">
             <HeadBox>ORDER ADVICE</HeadBox>
+            <OrderHubPanel />
           </div>
           <div className="  row-span-1 col-span-1">
             <HeadBox>SERVER_STATUSb5</HeadBox>
@@ -90,6 +92,7 @@ export default function Home() {
           alt="Picture of the future of trading"
           // width={100}
           // height={500}
+
           layout="fill" // required
           objectFit="cover"
         />
