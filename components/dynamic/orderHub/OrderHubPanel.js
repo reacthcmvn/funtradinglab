@@ -4,7 +4,7 @@ import LotSizeCalculator from "./LotSizeCalculator";
 
 const OrderHubPanel = () => {
   return (
-    <div>
+    <div className="">
       <LotSizeCalculator />
       <OrderHubList />
     </div>

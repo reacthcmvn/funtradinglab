@@ -7,6 +7,7 @@ import TickerPrice from "../components/dynamic/dataAPI/TickerPrice";
 import Location from "../components/ui/Location";
 import DataStream from "../components/dynamic/dataAPI/DataStream";
 import OrderHubPanel from "../components/dynamic/orderHub/OrderHubPanel";
+import NewsAPI from "../components/dynamic/dataAPI/NewsAPI";
 
 export default function Home() {
   return (
@@ -62,7 +63,7 @@ export default function Home() {
             <OrderHubPanel />
           </div>
           <div className="  row-span-1 col-span-1">
-            <HeadBox>SERVER_STATUSb5</HeadBox>
+            <HeadBox>PACKAGE DATA FLOW</HeadBox>
           </div>
           <div className="  row-span-1 col-span-1">
             <HeadBox>SERVER_STATUSb6</HeadBox>
@@ -71,15 +72,18 @@ export default function Home() {
             <HeadBox>SERVER_STATUSb7</HeadBox>
           </div>
         </div>
-        <div className="bg-white/30 row-span-3 col-span-2 grid grid-cols-1 grid-rows-3 gap-1">
+        <div className=" row-span-3 col-span-2 grid grid-cols-1 grid-rows-3 gap-1">
           <div className="  row-span-1 col-span-1">
             <HeadBox>SERVER_STATUSc1</HeadBox>
+            <br />
+            <Location />
           </div>
           <div className="  row-span-1 col-span-1">
-            <HeadBox>SERVER_STATUSc2</HeadBox>
+            <HeadBox>NEWS FLOW</HeadBox>
+            <NewsAPI />
           </div>
           <div className="  row-span-1 col-span-1">
-            <HeadBox>SERVER_STATUSc3</HeadBox>
+            <HeadBox>TOP CRYPTOS</HeadBox>
           </div>
         </div>
       </div>
