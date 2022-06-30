@@ -12,15 +12,15 @@ ChartJS.register(RadialLinearScale, ArcElement, Tooltip, Legend);
 
 export const data = {
   labels: [
-    "Red",
-    "Blue",
-    "Yellow",
-    "Green",
-    "Purple",
+    "White",
+    "White",
+    "White",
+    "White",
+    "White",
     "Orange",
-    "f",
+    "White",
     "e",
-    "qqee",
+    "White",
     "eee",
     "pppp",
   ],
@@ -46,10 +46,18 @@ export const data = {
   ],
 };
 
+const options = {
+  plugins: {
+    legend: {
+      display: false,
+    },
+  },
+};
+
 export function SunBrustChart() {
   return (
     <div className="">
-      <PolarArea data={data} />
+      <PolarArea options={options} data={data} />
     </div>
   );
 }

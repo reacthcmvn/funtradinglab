@@ -115,8 +115,11 @@ const NewsAPI = (props) => {
   return (
     <div>
       {articles.map((art) => (
-        <p className="text-white text-[9px] tracking-widest" key={art.title}>
-          {art.title.substring(0, 70)} [...]
+        <p
+          className="text-white text-[12px] tracking-widest font-robo"
+          key={art.title}
+        >
+          {art.title.substring(0, 60)} [...]
         </p>
       ))}
     </div>

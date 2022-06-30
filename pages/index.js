@@ -12,6 +12,8 @@ import { SunBrustChart } from "../components/dynamic/dataAPI/SunBrustChart";
 import { PolarChart } from "../components/dynamic/dataAPI/PolarChart";
 import { ScatterChart } from "../components/dynamic/dataAPI/ScatterChart";
 import { BarChart } from "../components/dynamic/dataAPI/BarChart";
+import { RadarChart } from "../components/dynamic/dataAPI/RadarChart";
+import PriceAPI from "../components/dynamic/dataAPI/PriceAPI";
 
 export default function Home() {
   return (
@@ -53,7 +55,7 @@ export default function Home() {
             <HeadBox>SERVER_STATUS_tonhat</HeadBox>
             <div className="relative flex bg-teal-500/30 justify-center">
               <div className="absolute w-9/12 z-20">
-                <SunBrustChart />
+                <RadarChart />
               </div>
               <div className="absolute w-9/12 z-20">
                 <PolarChart />
@@ -69,9 +71,16 @@ export default function Home() {
           </div>
           <div className="  row-span-2 col-span-1">
             <HeadBox>SERVER_STATUSb1</HeadBox>
+
+            <div className="relative flex ">
+              <div className="w-full">
+                <SunBrustChart />
+              </div>
+            </div>
           </div>
           <div className="  row-span-2 col-span-1">
             <HeadBox>ORDER MASTER</HeadBox>
+            <PriceAPI />
           </div>
           <div className="  row-span-1 col-span-1">
             <HeadBox>DATA STREAM</HeadBox>
@@ -85,7 +94,7 @@ export default function Home() {
             <HeadBox>PACKAGE DATA FLOW</HeadBox>
 
             <div className="relative flex w-full  justify-center  ">
-              <div className="absolute w-full h-[200px] bg-red-500">
+              <div className="absolute w-full h-[200px]">
                 <BarChart />
               </div>
             </div>
@@ -99,9 +108,7 @@ export default function Home() {
           </div>
           <div className="  row-span-1 col-span-1">
             <HeadBox>SERVER_STATUSb7</HeadBox>
-            <div>
-              <PolarChart />
-            </div>
+            <RadarChart />
           </div>
         </div>
         <div className=" row-span-3 col-span-2 grid grid-cols-1 grid-rows-3 gap-1">
