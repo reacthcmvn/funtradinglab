@@ -1,6 +1,6 @@
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
-import bg2 from "../styles/img/3333.webp";
+import bg2 from "../styles/img/b11.jpg";
 import HeadBox from "../components/ui/HeadBox";
 import SignalStatus from "../components/dynamic/serverConnection/SignalStatus";
 import TickerPrice from "../components/dynamic/dataAPI/TickerPrice";
@@ -8,6 +8,10 @@ import Location from "../components/ui/Location";
 import DataStream from "../components/dynamic/dataAPI/DataStream";
 import OrderHubPanel from "../components/dynamic/orderHub/OrderHubPanel";
 import NewsAPI from "../components/dynamic/dataAPI/NewsAPI";
+import { SunBrustChart } from "../components/dynamic/dataAPI/SunBrustChart";
+import { PolarChart } from "../components/dynamic/dataAPI/PolarChart";
+import { ScatterChart } from "../components/dynamic/dataAPI/ScatterChart";
+import { BarChart } from "../components/dynamic/dataAPI/BarChart";
 
 export default function Home() {
   return (
@@ -47,6 +51,21 @@ export default function Home() {
         <div className=" row-span-3 col-span-5 grid grid-cols-5 grid-rows-3 gap-1">
           <div className="  row-span-2 col-span-3">
             <HeadBox>SERVER_STATUS_tonhat</HeadBox>
+            <div className="relative flex bg-teal-500/30 justify-center">
+              <div className="absolute w-9/12 z-20">
+                <SunBrustChart />
+              </div>
+              <div className="absolute w-9/12 z-20">
+                <PolarChart />
+              </div>
+              <div className="absolute w-full h-[500px] bg-pink-500/0">
+                <div className="relative w-full h-[500px] table">
+                  <div className="table-cell align-middle text-right">
+                    <h2 className="bg-red-500 w-4">real_data: OFF</h2>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           <div className="  row-span-2 col-span-1">
             <HeadBox>SERVER_STATUSb1</HeadBox>
@@ -64,12 +83,25 @@ export default function Home() {
           </div>
           <div className="  row-span-1 col-span-1">
             <HeadBox>PACKAGE DATA FLOW</HeadBox>
+
+            <div className="relative flex w-full  justify-center  ">
+              <div className="absolute w-full h-[200px] bg-red-500">
+                <BarChart />
+              </div>
+            </div>
           </div>
           <div className="  row-span-1 col-span-1">
             <HeadBox>SERVER_STATUSb6</HeadBox>
+
+            <div className="flex ">
+              <ScatterChart />
+            </div>
           </div>
           <div className="  row-span-1 col-span-1">
             <HeadBox>SERVER_STATUSb7</HeadBox>
+            <div>
+              <PolarChart />
+            </div>
           </div>
         </div>
         <div className=" row-span-3 col-span-2 grid grid-cols-1 grid-rows-3 gap-1">
