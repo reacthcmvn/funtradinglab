@@ -37,16 +37,16 @@ const LotSizeCalculator = () => {
               <div className="table-cell w-6 bg-yellow-400/60 hover:bg-yellow-400 rounded-md  text-center">
                 <button
                   onClick={capitalHandler}
-                  className="text-black font-robo text-[11px] "
+                  className="text-black font-robo text-[14px] "
                   type="submit"
                 >
                   SET
                 </button>
               </div>
-              <div className="w-[3px]"></div>
+              <div className="w-[6px]"></div>
               <div className="table-cell w-6 bg-yellow-400/60 hover:bg-yellow-400 rounded-md  text-center">
                 <button
-                  className="text-black font-robo text-[11px]  "
+                  className="text-black font-robo text-[14px] "
                   type="submit"
                 >
                   ADD

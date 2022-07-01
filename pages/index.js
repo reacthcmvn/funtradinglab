@@ -20,7 +20,8 @@ import { PositionSplit } from "../components/dynamic/dataAPI/PositionSplit";
 import { BnfTimeFrameSplit } from "../components/dynamic/dataAPI/BnfTimeFrameSplit";
 import TheRich from "../components/layout/TheRich";
 
-export default function Home() {
+export default function Home(props) {
+  console.log(props.mainRadar);
   return (
     <div className="">
       <div className="text-yellow-400 text-5xl nav-top z-30 absolute">
@@ -60,7 +61,7 @@ export default function Home() {
             <HeadBox>BNF DIRECTION</HeadBox>
             <div className="relative flex bg-teal-500/30 justify-center">
               <div className="absolute w-9/12 z-20">
-                <RadarChart />
+                <RadarChart data={props.mainRadar} />
               </div>
               <div className="absolute w-9/12 z-20">
                 <PolarChartMain />
@@ -121,7 +122,7 @@ export default function Home() {
           </div>
           <div className="  row-span-1 col-span-1">
             <HeadBox>SERVER_STATUSb7</HeadBox>
-            <RadarChart />
+            {/* <RadarChart /> */}
           </div>
         </div>
         <div className=" row-span-3 col-span-2 grid grid-cols-1 grid-rows-3 gap-1">
@@ -167,3 +168,48 @@ export default function Home() {
     </div>
   );
 }
+
+// You should use getStaticProps when:
+//- The data required to render the page is available at build time ahead of a user’s request.
+//- The data comes from a headless CMS.
+//- The data can be publicly cached (not user-specific).
+//- The page must be pre-rendered (for SEO) and be very fast — getStaticProps generates HTML and JSON files, both of which can be cached by a CDN for performance.
+
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+}
+
+export const getStaticProps = () => {
+  const newSetDataRadar = [];
+  for (let i = 0; i < 6; i++) {
+    const dataPiece = getRandomInt(6); // your fetch function here
+    newSetDataRadar.push(dataPiece);
+  }
+  console.log(newSetDataRadar);
+  const dataRadarMain = {
+    labels: [
+      "Satelite 1",
+      "Satelite 2",
+      "Satelite 3",
+      "Satelite 4",
+      "Satelite 5",
+      "Satelite 6",
+    ],
+    datasets: [
+      {
+        label: "# of Votes",
+        data: newSetDataRadar,
+        backgroundColor: "rgba(255, 99, 132, 0.2)",
+        borderColor: "rgba(255, 99, 132, 1)",
+        borderWidth: 1,
+      },
+    ],
+  };
+
+  return {
+    props: {
+      mainRadar: dataRadarMain,
+    },
+    revalidate: 1,
+  };
+};

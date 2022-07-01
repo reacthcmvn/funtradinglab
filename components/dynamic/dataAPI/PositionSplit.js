@@ -130,6 +130,6 @@ export const options = {
 };
 
 export function PositionSplit(props) {
-  console.log(labels.length);
+  // console.log(labels.length);
   return <Line options={options} data={data} />;
 }
