@@ -13,6 +13,8 @@ import faker from "faker";
 ChartJS.register(LinearScale, PointElement, LineElement, Tooltip, Legend);
 
 export const options = {
+  responsive: true,
+  maintainAspectRatio: false,
   scales: {
     y: {
       beginAtZero: true,
@@ -35,7 +37,7 @@ export const data = {
 
 export function ScatterChart() {
   return (
-    <div>
+    <div className="h-full">
       <Scatter options={options} data={data} />
     </div>
   );

@@ -33,22 +33,25 @@ const LotSizeCalculator = () => {
                 ref={capitalRef}
               />
             </div>
-            <div>
-              <button
-                onClick={capitalHandler}
-                className="text-black text-xs bg-yellow-400/60 round-md"
-                type="submit"
-              >
-                SET
-              </button>
-            </div>
-            <div>
-              <button
-                className="text-black text-xs bg-yellow-400/60 round-md"
-                type="submit"
-              >
-                ADD
-              </button>
+            <div className="relative table align-middle">
+              <div className="table-cell w-6 bg-yellow-400/60 hover:bg-yellow-400 rounded-md  text-center">
+                <button
+                  onClick={capitalHandler}
+                  className="text-black font-robo text-[11px] "
+                  type="submit"
+                >
+                  SET
+                </button>
+              </div>
+              <div className="w-[3px]"></div>
+              <div className="table-cell w-6 bg-yellow-400/60 hover:bg-yellow-400 rounded-md  text-center">
+                <button
+                  className="text-black font-robo text-[11px]  "
+                  type="submit"
+                >
+                  ADD
+                </button>
+              </div>
             </div>
           </div>
         </div>

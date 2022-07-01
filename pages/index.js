@@ -1,6 +1,6 @@
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
-import bg2 from "../styles/img/bg4.jpg";
+import bg2 from "../styles/img/b11.jpg";
 import HeadBox from "../components/ui/HeadBox";
 import SignalStatus from "../components/dynamic/serverConnection/SignalStatus";
 import TickerPrice from "../components/dynamic/dataAPI/TickerPrice";
@@ -16,6 +16,9 @@ import { RadarChart } from "../components/dynamic/dataAPI/RadarChart";
 import PriceAPI from "../components/dynamic/dataAPI/PriceAPI";
 import { OrderStacking } from "../components/dynamic/dataAPI/OrderStacking";
 import SliderBar from "../components/dynamic/dataAPI/SliderBar";
+import { PositionSplit } from "../components/dynamic/dataAPI/PositionSplit";
+import { BnfTimeFrameSplit } from "../components/dynamic/dataAPI/BnfTimeFrameSplit";
+import TheRich from "../components/layout/TheRich";
 
 export default function Home() {
   return (
@@ -47,8 +50,8 @@ export default function Home() {
               </div>
             </div>
             <div className=" row-span-1">
-              <HeadBox>GPS DATA</HeadBox>
-              <Location />
+              <HeadBox>WORLD TOP</HeadBox>
+              <TheRich />
             </div>
           </div>
         </div>
@@ -105,20 +108,16 @@ export default function Home() {
             <OrderHubPanel />
           </div>
           <div className="  row-span-1 col-span-1">
-            <HeadBox>PACKAGE DATA FLOW</HeadBox>
+            <HeadBox>POSITION SPLIT</HeadBox>
+            <PositionSplit timeframe="5min" />
 
             <div className="relative flex w-full  justify-center  ">
-              <div className="absolute w-full h-[200px]">
-                <BarChart />
-              </div>
+              <div className="absolute w-full h-[200px]"></div>
             </div>
           </div>
           <div className="  row-span-1 col-span-1">
             <HeadBox>SERVER_STATUSb6</HeadBox>
-
-            <div className="flex ">
-              <ScatterChart />
-            </div>
+            <ScatterChart />
           </div>
           <div className="  row-span-1 col-span-1">
             <HeadBox>SERVER_STATUSb7</HeadBox>
@@ -136,7 +135,18 @@ export default function Home() {
             <NewsAPI />
           </div>
           <div className="  row-span-1 col-span-1">
-            <HeadBox>TOP CRYPTOS</HeadBox>
+            <HeadBox>BNF ALL FRAMES</HeadBox>
+            <div className=" grid grid-cols-1 grid-rows-3 ">
+              <div className="row-start-1 row-end-2  ">
+                <BnfTimeFrameSplit />
+              </div>
+              <div className=" row-start-2 row-end-3 ">
+                <BnfTimeFrameSplit />
+              </div>
+              <div className=" row-start-3 row-end-4">
+                <BnfTimeFrameSplit />
+              </div>
+            </div>
           </div>
         </div>
       </div>
