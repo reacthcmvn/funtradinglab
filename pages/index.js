@@ -19,9 +19,12 @@ import SliderBar from "../components/dynamic/dataAPI/SliderBar";
 import { PositionSplit } from "../components/dynamic/dataAPI/PositionSplit";
 import { BnfTimeFrameSplit } from "../components/dynamic/dataAPI/BnfTimeFrameSplit";
 import TheRich from "../components/layout/TheRich";
+import { RadarFast } from "../components/dynamic/dataAPI/RadarFast";
+import { RadarMainBnf } from "../components/dynamic/dataAPI/RadarMainBnf";
+import { PolarMainBnf } from "../components/dynamic/dataAPI/PolarMainBnf";
 
 export default function Home(props) {
-  console.log(props.mainRadar);
+  // console.log(props.mainRadar);
   return (
     <div className="">
       <div className="text-yellow-400 text-5xl nav-top z-30 absolute">
@@ -61,10 +64,13 @@ export default function Home(props) {
             <HeadBox>BNF DIRECTION</HeadBox>
             <div className="relative flex bg-teal-500/30 justify-center">
               <div className="absolute w-9/12 z-20">
-                <RadarChart data={props.mainRadar} />
+                {/* <RadarChart data={props.mainRadar} /> */}
+                <RadarMainBnf />
               </div>
               <div className="absolute w-9/12 z-20">
-                <PolarChartMain />
+                {/* <PolarChartMain /> */}
+
+                <PolarMainBnf />
               </div>
               <div className="absolute w-full h-[500px] bg-pink-500/0">
                 <div className="relative w-full h-[500px] table">
@@ -122,7 +128,7 @@ export default function Home(props) {
           </div>
           <div className="  row-span-1 col-span-1">
             <HeadBox>SERVER_STATUSb7</HeadBox>
-            {/* <RadarChart /> */}
+            <RadarFast />
           </div>
         </div>
         <div className=" row-span-3 col-span-2 grid grid-cols-1 grid-rows-3 gap-1">
@@ -179,13 +185,13 @@ function getRandomInt(max) {
   return Math.floor(Math.random() * max);
 }
 
-export const getStaticProps = () => {
+export const getStaticProps = async () => {
   const newSetDataRadar = [];
   for (let i = 0; i < 6; i++) {
     const dataPiece = getRandomInt(6); // your fetch function here
     newSetDataRadar.push(dataPiece);
   }
-  console.log(newSetDataRadar);
+  // console.log(newSetDataRadar);
   const dataRadarMain = {
     labels: [
       "Satelite 1",
