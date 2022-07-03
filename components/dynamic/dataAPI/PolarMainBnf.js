@@ -46,6 +46,8 @@ function genRandom(params) {
   return newNum;
 }
 
+const TFPolarMain = 2000;
+
 export function PolarMainBnf() {
   const [newDataPolarMainBnf, setNewDataPolarMainBnf] = useState(preData);
   useEffect(() => {
@@ -95,10 +97,10 @@ export function PolarMainBnf() {
       setNewDataPolarMainBnf(latestPolarData);
 
       // call chính mình
-      timeoutId = setTimeout(genNewData, 5000);
+      timeoutId = setTimeout(genNewData, TFPolarMain);
     }
 
-    timeoutId = setTimeout(genNewData, 5000);
+    timeoutId = setTimeout(genNewData, TFPolarMain);
 
     return () => {
       clearTimeout(timeoutId);

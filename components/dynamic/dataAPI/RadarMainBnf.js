@@ -10,6 +10,7 @@ import {
   Legend,
 } from "chart.js";
 import { Radar } from "react-chartjs-2";
+import { useSelector } from "react-redux";
 
 ChartJS.register(
   RadialLinearScale,
@@ -51,11 +52,23 @@ function newNumGen(params) {
   return newNum;
 }
 
+// useSelector get timeframe ra ở đây
+
+// const TFRadarMain = 1200;
+
 export function RadarMainBnf(props) {
+  // const TFRadarMain = useSelector((state) => state.timeFrameRadarMain);
+  const TFRadarMain = useSelector(
+    (state) =>
+      // console.log(state.tf.timeframeRadarMain)
+      state.tf.timeframeRadarMain
+  );
   const [fastDataMainBnf, setFastDataMainBnf] = useState(preData);
 
   useEffect(() => {
     let timeoutId;
+    // lấy timeframe easy trước đi
+
     function getNewSetData(params) {
       const newSetData = [];
 
@@ -65,7 +78,7 @@ export function RadarMainBnf(props) {
       }
 
       // dataGenMin();
-      console.log(newSetData);
+      // console.log(newSetData);
       const newFullData = {
         labels: [
           "Satelite 1",
@@ -87,14 +100,14 @@ export function RadarMainBnf(props) {
       };
 
       setFastDataMainBnf(newFullData);
-      timeoutId = setTimeout(getNewSetData, 2100);
+      timeoutId = setTimeout(getNewSetData, TFRadarMain);
     }
-    timeoutId = setTimeout(getNewSetData, 2050);
+    timeoutId = setTimeout(getNewSetData, TFRadarMain);
 
     return () => {
       clearTimeout(timeoutId);
     };
-  }, []);
+  }, [TFRadarMain]);
 
   return <Radar data={fastDataMainBnf} />;
 }

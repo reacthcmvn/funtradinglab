@@ -62,7 +62,7 @@ export function RadarFast(props) {
       }
 
       // dataGenMin();
-      console.log(newSetData);
+      // console.log(newSetData);
       const newFullData = {
         labels: [
           "Satelite 1",
